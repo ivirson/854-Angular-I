@@ -129,6 +129,36 @@ Vamos testar isso na prática!
 
 ---
 
+## Diretivas
+
+As diretivas são as funções que serão executadas sempre que o compilador do Angular as encontrar. Elas aprimoram a capacidade dos elementos do HTML anexando comportamentos personalizados ao DOM.
+
+As diretivas, no Angular, podem ser de três tipos:
+
+- Diretivas de atributo
+
+- Diretivas estruturais
+
+- Componentes
+
+---
+
+### Diretivas de atributo
+
+As diretivas de atributo fornecem a possibilidade de manipular a aparência e alguns comportamentos dos elementos do DOM.
+
+As diretivas de atributo mais comuns são `NgStyle` e `NgClass`.
+
+---
+
+### Diretivas estruturais
+
+As diretivas estruturais, como o nome sugere, são responsáveis por alterar a estrutura dos elementos do DOM. Podem adicionar ou remover elementos dinamicamente.
+
+As diretivas estruturais mais populares são `NgIf`, `NgFor` e `NgSwitch.`
+
+---
+
 ## Referências e links úteis
 
 - [Documentação Angular](https://angular.io/docs)
@@ -148,3 +178,5 @@ Vamos testar isso na prática!
 - [Como adicionar Bootstrap a um aplicativo Angular](https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application/)
 
 - [Binding syntax](https://angular.io/guide/binding-syntax)
+
+- [Como usar e criar diretivas personalizadas no Angular](https://www.freecodecamp.org/portuguese/news/como-usar-e-criar-diretivas-personalizadas-no-angular/)

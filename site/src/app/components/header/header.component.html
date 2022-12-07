@@ -35,10 +35,12 @@
         <input
           class="form-control me-2"
           type="search"
+          name="value"
           placeholder="Search"
           aria-label="Search"
+          [(ngModel)]="value"
         />
-        <a class="btn btn-outline-light" href="#"
+        <a class="btn btn-outline-light" href="#" (click)="onSearchSubmitted()"
           >Search</a
         >
       </form>

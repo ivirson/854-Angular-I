@@ -59,4 +59,8 @@ export class AppComponent {
     console.log("Formulário enviado com sucesso!", formData);
   }
 
+  onSearchSubmitted(text: string): void {
+    console.log("Você buscou por:", text);
+  }
+
 }
