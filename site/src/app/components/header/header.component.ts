@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
   @Output() public searchEmitter: EventEmitter<string> = new EventEmitter<string>();
 
   public value = '';
+  public userIsAuthenticated = false;
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class HeaderComponent implements OnInit {
 
   public onSearchSubmitted(): void {
     this.searchEmitter.emit(this.value);
+  }
+
+  public loginLogout(): void {
+    this.userIsAuthenticated = !this.userIsAuthenticated;
   }
 
 }

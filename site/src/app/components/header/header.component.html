@@ -1,4 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-red">
+<!-- ngStyle -->
+<!-- <nav
+  class="navbar navbar-expand-lg navbar-dark"
+  [ngStyle]="{ 'background-color': userIsAuthenticated ? 'black' : 'red' }"
+> -->
+<!-- ngClass -->
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  [ngClass]="{ 'bg-dark': userIsAuthenticated, 'bg-red': !userIsAuthenticated }"
+>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="./assets/images/logo_wt.png" alt="" />
@@ -44,6 +53,11 @@
           >Search</a
         >
       </form>
+      <div class="ms-3">
+        <button class="btn btn-light" (click)="loginLogout()">
+          {{ userIsAuthenticated ? 'Sair' : 'Entrar' }}
+        </button>
+      </div>
     </div>
   </div>
 </nav>
