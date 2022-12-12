@@ -26,9 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"
-            >Home</a
-          >
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about">Sobre nós</a>
@@ -40,24 +38,34 @@
           <a class="nav-link" href="#contact">Contato</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          name="value"
-          placeholder="Search"
-          aria-label="Search"
-          [(ngModel)]="value"
-        />
-        <a class="btn btn-outline-light" href="#" (click)="onSearchSubmitted()"
-          >Search</a
-        >
-      </form>
-      <div class="ms-3">
-        <button class="btn btn-light" (click)="loginLogout()">
-          {{ userIsAuthenticated ? 'Sair' : 'Entrar' }}
-        </button>
+      <div class="me-3 text-light" *ngIf="userIsAuthenticated">
+        <ng-container [ngSwitch]="headerData.profile">
+          <strong *ngSwitchCase="profilesEnum.ADMIN">Usuário Admin</strong>
+          <strong *ngSwitchCase="profilesEnum.EDITOR">Usuário Editor</strong>
+          <strong *ngSwitchCase="profilesEnum.USER">Usuário Comum</strong>
+          <strong *ngSwitchCase="profilesEnum.EMPLOYEE">Usuário Funcionário</strong>
+          <strong *ngSwitchCase="profilesEnum.VIEWER">Usuário Visitante</strong>
+          <strong *ngSwitchDefault>Usuário não autenticado</strong>
+        </ng-container>
       </div>
+    </div>
+    <form class="d-flex">
+      <input
+        class="form-control me-2"
+        type="search"
+        name="value"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="value"
+      />
+      <a class="btn btn-outline-light" href="#" (click)="onSearchSubmitted()"
+        >Search</a
+      >
+    </form>
+    <div class="ms-3">
+      <button class="btn btn-light" (click)="loginLogout()">
+        {{ userIsAuthenticated ? "Sair" : "Entrar" }}
+      </button>
     </div>
   </div>
 </nav>

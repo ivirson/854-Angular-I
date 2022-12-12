@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Profiles } from './constants/profiles.enum';
 import { AppData } from './models/app-data.model';
 import { ContactFormData } from './models/contact-form-data.model';
 
@@ -48,6 +49,9 @@ export class AppComponent {
         district: "Conjunto Castelo Branco",
         zipCode: "69911-262"
       }
+    },
+    header: {
+      profile: Profiles.EMPLOYEE
     }
   }
 
