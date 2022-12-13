@@ -1,23 +1,119 @@
 <div class="container">
   <h1 class="text-center mb-4">Contato</h1>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email</label>
-    <input
-      type="email"
-      class="form-control"
-      id="exampleFormControlInput1"
-      placeholder="name@example.com"
-      [(ngModel)]="formData.email"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-    <textarea
-      class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
-      [(ngModel)]="formData.message"
-    ></textarea>
-  </div>
-  <button class="btn btn-primary" [disabled]="btnDisabled" (click)="submitForm()">Enviar</button>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-5">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" class="form-control" formControlName="name" id="name" />
+        </div>
+        <div class="col">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="name@example.com"
+            formControlName="email"
+            name="email"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Telefone</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="(11) 9 99999-9999"
+            formControlName="phone"
+          />
+        </div>
+      </div>
+    </div>
+    <div formGroupName="address">
+      <div class="row mb-3">
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >CEP</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="zipCode"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Rua</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="street"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Número</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            formControlName="number"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Complemento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ex: Bl 12 APTO 334"
+            formControlName="complement"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Bairro</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="neighborhood"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Cidade</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="city"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Estado</label
+          >
+          <select class="form-select" formControlName="state">
+            <option *ngFor="let state of states" [value]="state.sigla">{{ state.nome }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Mensagem</label
+      >
+      <textarea class="form-control" rows="3" formControlName="message"></textarea>
+    </div>
+    <button
+      class="btn btn-primary"
+      (click)="submitForm()"
+    >
+      Enviar
+    </button>
+  </form>
 </div>

@@ -52,7 +52,7 @@ export class AppComponent {
         complement: "3º andar, sala 306",
         state: "AC",
         city: "Rio Branco",
-        district: "Conjunto Castelo Branco",
+        neighborhood: "Conjunto Castelo Branco",
         zipCode: "69911-262"
       }
     },
