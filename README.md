@@ -159,6 +159,14 @@ As diretivas estruturais mais populares são `NgIf`, `NgFor` e `NgSwitch.`
 
 ---
 
+## Diretivas customizadas
+
+Vimos anteriormente as principais diretivas do Angular e que podem ser diretivas de atributo (`NgStyle` e `NgClass`) ou diretivas estruturais (`NgIf`, `NgFor` e `NgSwitch.`).
+
+Agora, vamos criar nossas próprias diretivas...
+
+---
+
 ## Referências e links úteis
 
 - [Documentação Angular](https://angular.io/docs)

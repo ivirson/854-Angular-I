@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -10,6 +11,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LocaleCurrencyPipe } from './pipes/locale-currency.pipe';
+import localePt from '@angular/common/locales/pt';
+import { ZipCodeMaskPipe } from './pipes/zip-code-mask.pipe';
+
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -20,13 +26,18 @@ import { HeaderComponent } from './components/header/header.component';
     ContactComponent,
     FeaturesComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    LocaleCurrencyPipe,
+    ZipCodeMaskPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

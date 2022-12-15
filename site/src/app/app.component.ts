@@ -52,8 +52,10 @@ export class AppComponent {
         complement: "3º andar, sala 306",
         state: "AC",
         city: "Rio Branco",
-        district: "Conjunto Castelo Branco",
-        zipCode: "69911-262"
+        neighborhood: "Conjunto Castelo Branco",
+        zipCode: "699112",
+        foundationDate: '11/25/1926',
+        annualRevenue: 1000000
       }
     },
     header: {
