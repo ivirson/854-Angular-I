@@ -1,5 +1,20 @@
 <div class="container">
-  <h1 class="text-center mb-4">Endereço</h1>
-  <p>{{ addressData.data.street }}, {{ addressData.data.number }}, {{ addressData.data.complement }}</p>
-  <p>{{ addressData.data.neighborhood}}, {{ addressData.data.city }}-{{ addressData.data.state }}, CEP: {{ addressData.data.zipCode }}</p>
+  <h1 class="text-center mb-4">{{ addressData.sectionTitle | uppercase }}</h1>
+  <p>
+    {{ addressData.data.street }}, {{ addressData.data.number }},
+    {{ addressData.data.complement }}
+  </p>
+  <p>
+    {{ addressData.data.neighborhood }}, {{ addressData.data.city }}-{{
+      addressData.data.state
+    }}, CEP: {{ addressData.data.zipCode | zipCodeMask }}
+  </p>
+  <p>
+    Data de fundação:
+    {{ addressData.data.foundationDate | date : "dd/MM/yyyy" }}
+  </p>
+  <!-- <p>Faturamento anual: {{ addressData.data.annualRevenue | currency: 'BRL' }}</p> -->
+  <p>
+    Faturamento anual: {{ addressData.data.annualRevenue | localeCurrency }}
+  </p>
 </div>

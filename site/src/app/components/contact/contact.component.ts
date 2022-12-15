@@ -83,7 +83,10 @@ export class ContactComponent implements OnInit {
       ]),
       message: new FormControl(),
       address: new FormGroup({
-        zipCode: new FormControl(),
+        zipCode: new FormControl(null, [
+          Validators.required,
+          this.zipCodeValidator
+        ]),
         street: new FormControl(),
         number: new FormControl(),
         complement: new FormControl(),
@@ -121,6 +124,18 @@ export class ContactComponent implements OnInit {
 
   public showInputData(event: any): void {
     console.log(event.target.value)
+  }
+
+  private zipCodeValidator({ value }: FormControl) {
+    if (
+      !value ||
+      value.length !== 8 ||
+      isNaN(value)
+    ) {
+      return { 'invalidZipCode': true }
+    }
+
+    return null;
   }
 
 }

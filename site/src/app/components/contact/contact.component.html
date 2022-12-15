@@ -91,21 +91,32 @@
     </div>
     <div formGroupName="address">
       <div class="row mb-3">
-        <div class="col">
+        <div class="col-3">
           <label for="exampleFormControlInput1" class="form-label">CEP</label>
-          <input type="text" class="form-control" formControlName="zipCode" />
+          <input type="text" class="form-control" formControlName="zipCode"
+          [ngClass]="{
+            'is-invalid':
+              form.get('address.zipCode')?.errors && form.get('address.zipCode')?.touched
+          }" />
+          <span
+            class="invalid-feedback"
+            *ngIf="
+              form.get('address.zipCode')?.errors && form.get('address.zipCode')?.touched
+            "
+            >O campo documento está inválido</span
+          >
         </div>
-        <div class="col">
+        <div class="col-4">
           <label for="exampleFormControlInput1" class="form-label">Rua</label>
           <input type="text" class="form-control" formControlName="street" />
         </div>
-        <div class="col">
+        <div class="col-1">
           <label for="exampleFormControlInput1" class="form-label"
             >Número</label
           >
           <input type="number" class="form-control" formControlName="number" />
         </div>
-        <div class="col">
+        <div class="col-4">
           <label for="exampleFormControlInput1" class="form-label"
             >Complemento</label
           >
